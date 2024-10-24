@@ -11,5 +11,7 @@
         public string Titulos { get; set; }
 
         public bool AceptaExtranjeros { get; set; }
+
+   
     }
 }

@@ -2,7 +2,20 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    .titulo-futbol {
+        color: #ffcc00; 
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    }
+</style>
+
+<!-- Banner Principal -->
+<div>
+    <h1 class="display-4 titulo-futbol">Bienvenidos a la Liga de Fútbol</h1>
+    <p class="lead">Todo lo que necesitas saber sobre equipos, jugadores y torneos.</p>
+    <a class="btn btn-success btn-lg" href="/Equipo" role="button">Ver Equipos</a>
+    <a class="btn btn-primary btn-lg" href="/Jugadores" role="button">Ver Jugadores</a>
 </div>
+
+
+

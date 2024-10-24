@@ -6,20 +6,6 @@
 
 <h1 class="text-primary text-center mb-4">Lista de Jugadores</h1>
 
-<form asp-action="Index" method="get" class="mb-3">
-    <div class="row">
-        <div class="col-md-6">
-            <label for="equipoId" class="form-label">Filtrar por equipo</label>
-            <select asp-for="equipoId" asp-items="ViewBag.Equipos" class="form-select">
-                <option value="">-- Seleccione un equipo --</option>
-            </select>
-        </div>
-        <div class="col-md-3 align-self-end">
-            <button type="submit" class="btn btn-primary">Filtrar</button>
-        </div>
-    </div>
-</form>
-
 <div class="mb-3 text-end">
     <a asp-action="Create" class="btn btn-success">Crear Nuevo Jugador <i class="fas fa-plus-circle"></i></a>
 </div>
