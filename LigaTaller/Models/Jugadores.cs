@@ -21,7 +21,7 @@ namespace LigaTaller.Models
 
         public int IdEquipo { get; set; }
 
-        public Equipo Equipo { get; set; }
+      
 
     }
 }

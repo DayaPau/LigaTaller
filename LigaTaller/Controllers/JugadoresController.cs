@@ -45,19 +45,7 @@ namespace LigaTaller.Controllers
 
         // GET: Jugadores/Create
 
-        public async Task<IActionResult> Index(int? equipoId)
-        {
-            ViewBag.EquipoId = new SelectList(await _context.Equipo.ToListAsync(), "Id", "Nombre");
 
-            var jugadores = _context.Jugadores.Include(j => j.Equipo); // Asegúrate de que tienes una relación con el modelo de Equipo
-
-            if (equipoId.HasValue && equipoId.Value > 0)
-            {
-                jugadores = jugadores.Where(j => j.IdEquipo == equipoId.Value);
-            }
-
-            return View(await jugadores.ToListAsync());
-        }
         public IActionResult Create()
         {
             return View();
