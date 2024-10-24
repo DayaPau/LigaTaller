@@ -1,48 +1,52 @@
 ﻿@model LigaTaller.Models.Equipo
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create Equipo";
 }
 
-<h1>Create</h1>
+<h1 class="text-primary text-center mb-4">Crear Nuevo Equipo</h1>
 
-<h4>Equipo</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form asp-action="Create" class="shadow p-4 bg-light rounded">
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+            
             <div class="form-group">
-                <label asp-for="Nombre" class="control-label"></label>
-                <input asp-for="Nombre" class="form-control" />
+                <label asp-for="Nombre" class="form-label"></label>
+                <input asp-for="Nombre" class="form-control" placeholder="Ingrese el nombre del equipo" />
                 <span asp-validation-for="Nombre" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="Ciudad" class="control-label"></label>
-                <input asp-for="Ciudad" class="form-control" />
+                <label asp-for="Ciudad" class="form-label"></label>
+                <input asp-for="Ciudad" class="form-control" placeholder="Ingrese la ciudad" />
                 <span asp-validation-for="Ciudad" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="Titulos" class="control-label"></label>
-                <input asp-for="Titulos" class="form-control" />
+                <label asp-for="Titulos" class="form-label"></label>
+                <input asp-for="Titulos" class="form-control" placeholder="Ingrese el número de títulos" />
                 <span asp-validation-for="Titulos" class="text-danger"></span>
             </div>
-            <div class="form-group form-check">
+
+            <div class="form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="AceptaExtranjeros" /> @Html.DisplayNameFor(model => model.AceptaExtranjeros)
+                    <input class="form-check-input" asp-for="AceptaExtranjeros" /> ¿Acepta Extranjeros?
                 </label>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+            <div class="d-grid gap-2 mt-3">
+                <input type="submit" value="Crear Equipo" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="text-center mt-4">
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+

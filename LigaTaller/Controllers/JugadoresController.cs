@@ -65,6 +65,25 @@ namespace LigaTaller.Controllers
             return View(jugadores);
         }
 
+        public IActionResult Index(int? equipoId)
+        {
+            // Obtener la lista de equipos para el filtro
+            ViewBag.Equipos = new SelectList(_context.Equipos, "Id", "Nombre");
+
+            // Consultar todos los jugadores inicialmente
+            var jugadores = from j in _context.Jugadores select j;
+
+            // Si se selecciona un equipo, filtrar los jugadores por ese equipo
+            if (equipoId.HasValue)
+            {
+                jugadores = jugadores.Where(j => j.IdEquipo == equipoId.Value);
+            }
+
+            return View(jugadores.ToList());
+        }
+
+
+
         // GET: Jugadores/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
